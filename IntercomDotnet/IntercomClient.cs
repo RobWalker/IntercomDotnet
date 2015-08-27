@@ -16,6 +16,7 @@ namespace IntercomDotNet
                              };
 
             return new IntercomClient(
+                new Companies(client),
                 new Users(client),
                 new Notes(client),
                 new Tags(client),
@@ -23,8 +24,9 @@ namespace IntercomDotNet
                 new Segments(client));
         }
 
-        private IntercomClient(Users users, Notes notes, Tags tags, Events events, Segments segments)
+        private IntercomClient(Companies companies, Users users, Notes notes, Tags tags, Events events, Segments segments)
         {
+            Companies = companies;
             Users = users;
             Notes = notes;
             Tags = tags;
@@ -32,6 +34,7 @@ namespace IntercomDotNet
             Segments = segments;
         }
 
+        public Companies Companies { get; private set; }
         public Users Users { get; private set; }
         public Notes Notes { get; private set; }
         public Tags Tags { get; private set; }
