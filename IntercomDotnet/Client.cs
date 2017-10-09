@@ -1,9 +1,12 @@
-﻿using System.Net;
-using Newtonsoft.Json;
-using RestSharp;
-using System;
+﻿using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+
+using Newtonsoft.Json;
+
+using RestSharp;
+using RestSharp.Authenticators;
 
 namespace IntercomDotNet
 {
